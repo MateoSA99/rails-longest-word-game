@@ -1,0 +1,17 @@
+<h1>Games#score</h1>
+<p>Find me in app/views/games/score.html.erb</p>
+
+<h1><%= @letters %></h1>
+<h1><%= @word %></h1>
+
+<% if @included && @english_word %>
+<p>Congratulations <%= @word %> is a valid English Word</p>
+<% elsif @included && !@english_word %>
+<p><%= @word %> is not a valid English Word</p>
+<% elsif @english_word && !@included %>
+<p> <%= @word %> is a valid English Word but is not included</p>
+<% else %>
+<p>Try Again!</p>
+<% end %>
+
+<%= link_to "Play Again!", new_path %>
